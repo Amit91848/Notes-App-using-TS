@@ -7,15 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 function App() {
-  const [notes, setNotes] = useState<Note[]>([{
-    id: (new Date).toString(),
-    title: "Meetings",
-    text: "Scheduled meeting with ui ux team",
-    color: "#dfdfdf",
-    date: (new Date).toString()
-  }]);
-
-
+  const [notes, setNotes] = useState<Note[]>([]);
   return (
     <>
       <Header/>
@@ -27,7 +19,7 @@ function App() {
         </Row>
         <Row>
           <Col>
-            <CreateNotes />
+            <CreateNotes notes={ notes } setNotes={ setNotes } />
           </Col>
         </Row>
       </Container>
